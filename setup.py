@@ -26,36 +26,26 @@ def find_version(*file_paths):
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file
-with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
-    long_description = f.read()
+# with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
+#     long_description = f.read()
 
 setup(
     name='segpy',
-
-    # Versions should comply with PEP440.  For a discussion on single-sourcing
-    # the version across setup.py and the project code, see
-    # https://packaging.python.org/en/latest/single_source_version.html
-    version=find_version("segpy/__init__.py"),
-
+    # version=find_version("segpy/__init__.py"),
+    version="1.0.0",
     description='Transfer of seismic data to and from SEG Y files',
-    long_description=long_description,
+    # long_description=long_description,
 
     # The project's main homepage.
-    url='https://github.com/sixty-north/segpy',
+    url='https://github.com/whimian/segpy-lite',
 
     # Author details
-    author='Sixty North AS',
-    author_email='rob@sixty-north.com',
+    author='Yu Hao',
+    author_email='yuhao89@live.cn',
 
     # Choose your license
-    license='GNU Affero General Public License v3',
-
-    # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
+    license='MIT',
     classifiers=[
-        # How mature is this project? Common values are
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
         'Development Status :: 3 - Alpha',
 
         # Indicate who your project is intended for
@@ -85,7 +75,7 @@ setup(
     # project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['docopt_subcommands'],
+    install_requires=[],
 
     # List additional groups of dependencies here (e.g. development dependencies).
     # You can install these using the following syntax, for example:
@@ -99,8 +89,8 @@ setup(
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
     # have to be included in MANIFEST.in as well.
-    package_data={
-    },
+    # package_data={
+    # },
 
     # Although 'package_data' is the preferred approach, in some case you may
     # need to place data files outside of your packages.
@@ -111,9 +101,9 @@ setup(
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
-    entry_points={
-        'console_scripts': [
-            'segpy = segpy.cli:main',
-        ],
-    }
+    # entry_points={
+    #     'console_scripts': [
+    #         'segpy = segpy.cli:main',
+    #     ],
+    # }
 )
