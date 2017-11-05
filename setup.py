@@ -1,29 +1,30 @@
 import io
 import os
 import re
-from setuptools import setup, find_packages  # Always prefer setuptools over distutils
-from codecs import open  # To use a consistent encoding
+from distutils.core import setup
+from setuptools import find_packages  # Always prefer setuptools over distutils
+# from codecs import open  # To use a consistent encoding
 from os import path
 
 
-def read(*names, **kwargs):
-    with io.open(
-        os.path.join(os.path.dirname(__file__), *names),
-        encoding=kwargs.get("encoding", "utf8")
-    ) as fp:
-        return fp.read()
+# def read(*names, **kwargs):
+#     with io.open(
+#         os.path.join(os.path.dirname(__file__), *names),
+#         encoding=kwargs.get("encoding", "utf8")
+#     ) as fp:
+#         return fp.read()
 
 
-def find_version(*file_paths):
-    version_file = read(*file_paths)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
-                              version_file, re.M)
-    if version_match:
-        return version_match.group(1)
-    raise RuntimeError("Unable to find version string.")
+# def find_version(*file_paths):
+#     version_file = read(*file_paths)
+#     version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
+#                               version_file, re.M)
+#     if version_match:
+#         return version_match.group(1)
+#     raise RuntimeError("Unable to find version string.")
 
 
-here = path.abspath(path.dirname(__file__))
+# here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the relevant file
 # with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
@@ -69,22 +70,17 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(exclude=['contrib', 'docs', 'test*']),
+    packages=find_packages(),
 
     # List run-time dependencies here.  These will be installed by pip when your
     # project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=[],
+    # install_requires=[],
 
     # List additional groups of dependencies here (e.g. development dependencies).
     # You can install these using the following syntax, for example:
     # $ pip install -e .[dev,test]
-    extras_require = {
-        'dev': ['check-manifest', 'wheel'],
-        'doc': ['sphinx', 'cartouche'],
-        'test': ['coverage', 'hypothesis', 'pytest'],
-    },
 
     # If there are data files included in your packages that need to be
     # installed, specify them here.  If using Python 2.6 or less, then these
@@ -96,8 +92,8 @@ setup(
     # need to place data files outside of your packages.
     # see http://docs.python.org/3.4/distutils/setupscript.html#installing-additional-files
     # In this case, 'data_file' will be installed into '<sys.prefix>/my_data'
-    data_files=[],
-
+    # data_files=[],
+    platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
     # To provide executable scripts, use entry points in preference to the
     # "scripts" keyword. Entry points provide cross-platform support and allow
     # pip to create the appropriate form of executable for the target platform.
