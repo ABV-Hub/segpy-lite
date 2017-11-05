@@ -30,7 +30,7 @@ here = path.abspath(path.dirname(__file__))
 #     long_description = f.read()
 
 setup(
-    name='segpy',
+    name='segpy-lite',
     # version=find_version("segpy/__init__.py"),
     version="1.0.0",
     description='Transfer of seismic data to and from SEG Y files',
