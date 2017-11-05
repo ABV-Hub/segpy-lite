@@ -22,7 +22,7 @@ CLASSIFIERS = [
 
 setup(
     name='segpy-lite',
-    version="1.0.2",
+    version="1.0.3",
     description='Transfer of seismic data to and from SEG Y files',
     long_description="",
     url='https://github.com/whimian/segpy-lite',
