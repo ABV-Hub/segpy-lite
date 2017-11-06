@@ -1,6 +1,6 @@
 package:
   name: segpy-lite
-  version: {{ GIT_DESCRIBE_TAG }}
+  version: {{ GIT_DESCRIBE_TAG[1:] }}
 
 source:
   # git_rev: v1.0.3
