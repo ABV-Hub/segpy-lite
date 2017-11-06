@@ -1,7 +1,6 @@
-# setup.py
 from distutils.core import setup
 from setuptools import find_packages
-
+import versioneer
 
 CLASSIFIERS = [
     'Development Status :: 4 - Beta',
@@ -22,7 +21,8 @@ CLASSIFIERS = [
 
 setup(
     name='segpy-lite',
-    version="1.0.3",
+    version=versioneer.get_version(),
+    cmdclass=versioneer.get_cmdclass(),
     description='Transfer of seismic data to and from SEG Y files',
     long_description="",
     url='https://github.com/whimian/segpy-lite',
