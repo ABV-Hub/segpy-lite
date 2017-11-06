@@ -13,6 +13,7 @@ build:
   # Note that this will override the default build string with the Python
   # and NumPy versions
   # string: {{ GIT_BUILD_STR }}
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
