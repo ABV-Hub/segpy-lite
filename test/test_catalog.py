@@ -1,4 +1,4 @@
-from hypothesis import given, assume, settings, HealthCheck
+from hypothesis import given, assume
 from hypothesis.strategies import (dictionaries, just,
                                    integers, streaming, tuples)
 from segpy.catalog import CatalogBuilder
@@ -19,8 +19,7 @@ class TestCatalogBuilder:
         catalog = builder.create()
         shared_items = set(mapping.items()) & set(catalog.items())
         assert len(shared_items) == len(mapping)
-    
-    @settings(suppress_health_check=[HealthCheck.data_too_large ])
+
     @given(start=integers(),
            num=integers(0, 10000),
            step=integers(-10000, 10000),
@@ -33,8 +32,7 @@ class TestCatalogBuilder:
         catalog = builder.create()
         shared_items = set(mapping.items()) & set(catalog.items())
         assert len(shared_items) == len(mapping)
-        
-    @settings(suppress_health_check=[HealthCheck.data_too_large, HealthCheck.too_slow])
+
     @given(start=integers(),
            num=integers(0, 10000),
            step=integers(-10000, 10000),
